@@ -77,13 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Twin Blades | Premier Barber in Ennis, Ireland" },
+      { title: "Élodie Hair Studio | Women’s Hair Salon in Ennis, Co. Clare" },
       {
         name: "description",
         content:
-          "Discover Twin Blades in Ennis, Ireland. Top-rated Barber services. Contact us today at +353 65 684 2660.",
+          "Discover professional women’s haircuts, colour, balayage, blow-dries and occasion styling at Élodie Hair Studio in Ennis, County Clare. Book your appointment today.",
       },
-      { property: "og:site_name", content: "Twin Blades" },
+      { property: "og:site_name", content: "Élodie Hair Studio" },
       { property: "og:locale", content: "en_IE" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -96,7 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],

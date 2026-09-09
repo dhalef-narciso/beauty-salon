@@ -1,142 +1,69 @@
-# Twin Blades Landing
+# Élodie Hair Studio Landing Page
 
-### PROJECT
+A modern, elegant, and high-converting landing page for a premium women's hair and beauty salon in Ennis, Co. Clare, Ireland.
 
-Create a modern, professional, high-converting landing page for Twin Blades.
+### SALON INFORMATION & CUSTOMIZATION
 
-### BUSINESS INFORMATION
+All business details, services, opening hours, contact details, and social links are centrally organized and easily editable in:
 
-- Business Name: Twin Blades
+📁 `src/data/salon.ts`
 
-- Category / Industry: Barber
+- **Salon Name**: `Élodie Hair Studio` (configurable)
+- **Category / Industry**: Women's Hair & Beauty Salon
+- **Location**: 4 Barrack St, Clonroad Beg, Ennis, Co. Clare, V95 VNE4, Ireland
+- **Phone**: +353 65 684 2660
+- **WhatsApp**: Available via verified wa.me link
+- **Email**: appointments@elodiehairstudio.ie
 
-- Location / Market: Ennis, Ireland (4 Barrack St, Clonroad Beg, Ennis, Co. Clare, V95 VNE4, Ireland)
+### DESIGN SYSTEM
 
-- Verified Description: "Opens soon · 9 AM"
+- **Aesthetic Direction**: Elegant, warm, feminine, and editorial with sophisticated typography and balanced contrast.
+- **Palette**:
+  - Deep plum / burgundy: `#4A2535`
+  - Dusty rose: `#C98F9D`
+  - Soft blush: `#E8C7CD`
+  - Warm champagne gold: `#C6A15B`
+  - Cream / off-white: `#FAF6F1`
+  - Warm taupe: `#8A756C`
+  - Dark text: `#2B2225`
+  - White: `#FFFFFF`
+- **Typography**:
+  - Headings: _Playfair Display_ (sophisticated editorial serif)
+  - Body & UI: _Montserrat_ & _Inter_ (clean, contemporary, highly readable)
 
-- Phone: +353 65 684 2660
+### PAGE SECTIONS
 
-- Instagram Profile: https://www.instagram.com/twin.blades?igsh=ejVscDFjMTk2a3k0
-
-- Facebook Profile: https://www.facebook.com/brogansennis/mentions/
-
-- Google Maps / Location Info: https://www.google.com/maps?cid=15724340356351169961
-
-- Verified Google Rating: 4.8 ★ (33 reviews on Google)
-
-- Website Status: No existing professional website was detected during the research process. This demo should be designed as a new website concept.
-
-### GOAL
-
-The goal is to create a professional website concept that helps this local business attract customers in Ennis, Ireland, showcase its core offerings clearly, build immediate local trust, and make it seamless for visitors to get in touch or book.
-
-### DESIGN DIRECTION
-
-- Aesthetic Vibe: Premium, masculine, modern, and editorial with crafted typography and sharp contrast
-
-- Palette & Typography: Rich dark tones (charcoal, slate, deep bronze or amber accents) evoking an authentic artisanal barbershop atmosphere.
-
-- Branding Guidance: Use the publicly available branding and visual identity of the business as inspiration (do not invent arbitrary brand claims or scrape private data).
-
-- Layout Style: Sleek modern cards, subtle depth, smooth hover micro-animations, accessible color contrast (WCAG AA compliant).
-
-### PAGE STRUCTURE
-
-1. **Hero Section**: Strong headline, tagline featuring location, background visual treatment, and primary "Book Appointment" / "Call Now" CTA.
-
-2. **Services**: Clean layout highlighting signature cuts, beard grooming, and hot towel treatments (use generic service placeholders clearly marked for owner customization).
-
-3. **About / Craft**: Brief narrative emphasizing master barbers and community atmosphere.
-
-4. **Gallery / Portfolio Showcase**: High-impact visual grid showcasing crisp fades, cuts, and shop atmosphere.
-
-5. **Verified Customer Reviews**: Real Google rating badge (4.8★ rating, 33 reviews) with authentic feedback section.
-
-6. **Location & Directions**: Interactive map placeholder, address (4 Barrack St, Clonroad Beg, Ennis, Co. Clare, V95 VNE4, Ireland), and transit/parking guidance.
-
-7. **Contact & Booking CTA**: Final prominent action block with Click-to-Call (+353 65 684 2660) and WhatsApp CTA.
-
-### FUNCTIONAL REQUIREMENTS
-
-- Sticky navigation header with business branding and quick contact CTA button.
-
-- Mobile navigation drawer with smooth animation.
-
-- Contact form with front-end validation (Name, Email / Phone, Message).
-
-- Click-to-call link for tel:+353656842660 on mobile and desktop.
-
-- WhatsApp chat CTA button linking directly to WhatsApp using the verified phone number.
-
-- Embedded responsive map section or styled map card with a "Get Directions" link opening Google Maps.
-
-- Social link button to Instagram: https://www.instagram.com/twin.blades?igsh=ejVscDFjMTk2a3k0.
-
-- Social link button to Facebook: https://www.facebook.com/brogansennis/mentions/.
+1. **Header & Navigation**: Fixed navigation with blurred backdrop on scroll, elegant salon logo with hair/beauty icon mark, quick "Book Appointment" CTA, and mobile drawer.
+2. **Hero Section**: Natural sunlit women's salon interior, single H1 (`Beautiful Hair, Designed Around You`), dual CTAs (`Book Your Appointment`, `Explore Our Services`), discreet Call/WhatsApp line, and core trust highlights.
+3. **Services Menu**: 6 dedicated salon services with editable price placeholders:
+   - Cut & Blow-Dry (From €65)
+   - Hair Colour (Price on consultation)
+   - Highlights & Balayage (Price on consultation)
+   - Blow-Dry & Styling (From €40)
+   - Hair Treatments (From €35)
+   - Bridal & Occasion Hair (Price on consultation)
+4. **About The Salon**: Personalized consultation philosophy, commitment to healthy hair, and 4 core client pillars.
+5. **Gallery / Transformations**: Responsive visual showcase of precision cuts, dimensional balayage, occasion styling, and restorative gloss treatments.
+6. **Client Reviews**: Authentic feedback layout with neutral local client testimonials and Google Maps review link.
+7. **Consultation CTA**: "Ready for Your Next Look?" full-width section with primary booking and direct messaging actions.
+8. **Visit & Contact Form**: Salon address, weekly operating hours, interactive booking request form with front-end validation, and embedded Google Maps view.
+9. **Footer & Mobile Action Bar**: Comprehensive directory links and a sticky mobile action bar for one-tap booking and WhatsApp communication.
 
 ### LOCAL SEO
 
-- Page Title: "Twin Blades | Premier Barber in Ennis, Ireland"
+- **Title**: `Élodie Hair Studio | Women’s Hair Salon in Ennis, Co. Clare`
+- **Description**: `Discover professional women’s haircuts, colour, balayage, blow-dries and occasion styling at Élodie Hair Studio in Ennis, County Clare. Book your appointment today.`
+- **Schema.org**: Structured JSON-LD for `BeautySalon` and `HairSalon` with address, telephone, price range, and opening hours.
 
-- Meta Description: "Discover Twin Blades in Ennis, Ireland. Top-rated Barber services. Contact us today at +353 65 684 2660."
-
-- Semantic HTML5 tags (<header>, <main>, <section>, <article>, <footer>, <nav>).
-
-- Single <h1> tag containing the business name and core niche/location.
-
-- Schema.org JSON-LD LocalBusiness markup ready for inclusion.
-
-- Open Graph meta tags (og:title, og:description, og:type=business.business, og:locale=en_IE).
-
-### RESPONSIVENESS
-
-- Strictly Mobile-First responsive design.
-
-- Seamless adaptation across mobile screens (375px+), tablets (768px+), and desktops (1200px+).
-
-- Touch-friendly interactive targets (minimum 44x44px for buttons and inputs).
-
-- Smooth typography scaling using clamp() or fluid responsive utility classes.
-
-### CTA REQUIREMENTS
-
-- Primary CTA: High-contrast, easily noticeable button above the fold.
-
-- Secondary CTA: Outlined or subtle button for low-friction exploration.
-
-- Mobile Bottom Bar or Floating Action: Direct "Call Now" or "WhatsApp" button.
-
-### CONTENT RULES & DATA INTEGRITY
-
-1. DO NOT fabricate or invent opening hours if none were provided above.
-
-2. DO NOT fabricate specific pricing figures unless explicitly listed.
-
-3. DO NOT fabricate fake client testimonials or reviews; only reference the verified Google rating and review count provided.
-
-4. DO NOT invent false certifications, awards, or claims like "family owned since 1950" unless present in the verified description.
-
-5. For any services not explicitly enumerated, use clear, industry-standard placeholder labels designed for the business owner to easily customize.
-
-6. Maintain a positive, professional tone that positions this business as the leading choice in its locality.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/98b34148-a2e8-4207-82f3-71aafbf976fe).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+### DEVELOPMENT
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
+```
+
+To build for production:
+
+```sh
+npm run build
 ```
