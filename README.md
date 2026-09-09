@@ -1,6 +1,6 @@
-# Élodie Hair Studio Landing Page
+# Luxe Hair & Beauty Salon Landing Page (Demo)
 
-A modern, elegant, and high-converting landing page for a premium women's hair and beauty salon in Ennis, Co. Clare, Ireland.
+A modern, elegant, and high-converting landing page for a premium hair and beauty salon demo.
 
 ### SALON INFORMATION & CUSTOMIZATION
 
@@ -8,12 +8,12 @@ All business details, services, opening hours, contact details, and social links
 
 📁 `src/data/salon.ts`
 
-- **Salon Name**: `Élodie Hair Studio` (configurable)
-- **Category / Industry**: Women's Hair & Beauty Salon
-- **Location**: 4 Barrack St, Clonroad Beg, Ennis, Co. Clare, V95 VNE4, Ireland
+- **Salon Name**: `Luxe Hair & Beauty Salon` (Short name: `Luxe Salon`)
+- **Category / Industry**: Luxury Hair & Beauty Salon
+- **Location**: 04 Barrack Street, Ennis, Ireland V95 VNE4
 - **Phone**: +353 65 684 2660
 - **WhatsApp**: Available via verified wa.me link
-- **Email**: appointments@elodiehairstudio.ie
+- **Email**: appointments@luxesalon.com
 
 ### DESIGN SYSTEM
 
@@ -51,8 +51,8 @@ All business details, services, opening hours, contact details, and social links
 
 ### LOCAL SEO
 
-- **Title**: `Élodie Hair Studio | Women’s Hair Salon in Ennis, Co. Clare`
-- **Description**: `Discover professional women’s haircuts, colour, balayage, blow-dries and occasion styling at Élodie Hair Studio in Ennis, County Clare. Book your appointment today.`
+- **Title**: `Luxe Hair & Beauty Salon | Luxury Hair & Beauty Studio`
+- **Description**: `Discover professional sculptured cuts, contoured colour, balayage, blow-dries and occasion styling at Luxe Hair & Beauty Salon. Book your appointment today.`
 - **Schema.org**: Structured JSON-LD for `BeautySalon` and `HairSalon` with address, telephone, price range, and opening hours.
 
 ### DEVELOPMENT

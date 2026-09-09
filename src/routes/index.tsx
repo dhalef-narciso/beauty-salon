@@ -463,7 +463,7 @@ function Index() {
         <section id="about" className="border-y border-border bg-surface-2/70">
           <div className="mx-auto grid max-w-7xl gap-12 px-5 py-24 lg:grid-cols-2 lg:items-center lg:px-10 lg:py-32">
             <div>
-              <p className="eyebrow">ABOUT TWIN BLADES</p>
+              <p className="eyebrow">ABOUT {SALON_CONFIG.shortName.toUpperCase()}</p>
               <h2 className="mt-3 text-fluid-section font-semibold text-plum">
                 Celebrating Nearly 29 Years in Ennis
               </h2>
@@ -518,7 +518,7 @@ function Index() {
                   wearing every single day."
                 </p>
                 <p className="mt-2 text-xs font-bold text-gold uppercase tracking-wider">
-                  Twin Blades Team · Ennis, Clare
+                  {SALON_CONFIG.shortName} Team
                 </p>
               </div>
             </div>
@@ -534,7 +534,7 @@ function Index() {
                 Transformations & Styling
               </h2>
               <p className="mt-3 max-w-xl text-base leading-relaxed text-foreground font-normal">
-                A glimpse of recent client work crafted in our Ennis chairs — sculptured cuts,
+                A glimpse of recent client work crafted in our chairs — sculptured cuts,
                 contoured colour, highlights, and occasion styling.
               </p>
             </div>
@@ -546,7 +546,7 @@ function Index() {
                 className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border bg-white px-5 text-xs font-bold text-plum transition-colors hover:border-gold hover:bg-cream"
               >
                 <Instagram className="h-4 w-4 text-gold" aria-hidden="true" />
-                Follow @twin.blades
+                Follow {SALON_CONFIG.contact.instagramHandle || "@luxesalon"}
               </a>
               <a
                 href={SALON_CONFIG.contact.facebook}

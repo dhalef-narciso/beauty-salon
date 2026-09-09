@@ -1,6 +1,6 @@
 /**
  * Centralized Salon Data Configuration
- * Matched to official Twin Blades Instagram identity (@twin.blades)
+ * Demo Salon: Luxe Hair & Beauty Salon
  */
 
 export interface SalonService {
@@ -24,26 +24,27 @@ export interface SalonReview {
 }
 
 export const SALON_CONFIG = {
-  name: "Twin Blades Hair Salon",
-  shortName: "Twin Blades",
+  name: "Luxe Hair & Beauty Salon",
+  shortName: "Luxe Salon",
   tagline: "Beautiful Hair, Designed Around You",
-  eyebrow: "HAIR & BEAUTY SALON · ENNIS, CO. CLARE",
+  eyebrow: "HAIR & BEAUTY SALON",
   description:
-    "Professional advice, sculptured cuts, contoured colour, and glamorous finishes. Celebrating nearly 29 years of trusted hairdressing in the heart of Ennis.",
+    "Professional advice, sculptured cuts, contoured colour, and glamorous finishes. Celebrating trusted hairdressing and bespoke beauty care.",
 
-  // Contact & Location Details from Instagram
+  // Contact & Location Details
   contact: {
     address: "04 Barrack Street, Ennis, Ireland V95 VNE4",
     phoneDisplay: "065 684 2660",
     phoneTel: "+353656842660",
     whatsapp: "https://wa.me/353656842660",
-    email: "appointments@twinblades.ie",
+    email: "appointments@luxesalon.com",
     mapsUrl:
       "https://www.google.com/maps?q=4+Barrack+St,+Clonroad+Beg,+Ennis,+Co.+Clare,+V95+VNE4,+Ireland",
     mapsEmbedUrl:
       "https://www.google.com/maps?q=4%20Barrack%20St%2C%20Clonroad%20Beg%2C%20Ennis%2C%20Co.%20Clare%2C%20V95%20VNE4%2C%20Ireland&output=embed",
-    instagram: "https://www.instagram.com/twin.blades",
-    facebook: "https://www.facebook.com/TwinBladesHairSalon",
+    instagram: "https://www.instagram.com/luxesalon",
+    instagramHandle: "@luxesalon",
+    facebook: "https://www.facebook.com/luxesalon",
     bookingUrl: "#contact",
   },
 
