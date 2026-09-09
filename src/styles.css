@@ -5,8 +5,12 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Salon Design System - High Legibility & Premium Editorial Aesthetics
- * Clear contrast against cream backgrounds, generous line heights, and refined typography.
+ * Twin Blades Real Instagram Visual Identity:
+ * - Deep Heritage Forest Green (#16382C): Storefront facade & primary contrast
+ * - Warm Antique Gold (#C5A25D): Logo lettering & accent details
+ * - Warm Ivory Cream (#FAF8F5): Clean, luminous background
+ * - Botanical Sage / Olive (#4F735F & #E3ECE6): Editorial greenery & subtle badges
+ * - Deep Charcoal Forest (#141C18 & #45524B): Crisp high-contrast readable text
  */
 
 @theme inline {
@@ -15,8 +19,10 @@
   --font-sans:
     "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
+  --color-forest: var(--plum);
   --color-plum: var(--plum);
   --color-plum-deep: var(--plum-deep);
+  --color-sage: var(--rose);
   --color-rose: var(--rose);
   --color-blush: var(--blush);
   --color-gold: var(--gold);
@@ -59,53 +65,53 @@
 :root {
   --radius: 0.625rem;
 
-  /* Palette - Rich high-contrast tones */
-  --plum: #3b1b2a;
-  --plum-deep: #250e1a;
-  --rose: #9e4a62;
-  --blush: #e8c7cd;
-  --gold: #966c23;
-  --gold-light: #c6a15b;
-  --cream: #faf6f1;
-  --taupe: #4e3e45;
+  /* Real Instagram Brand Palette */
+  --plum: #16382c; /* Deep Heritage Forest Green */
+  --plum-deep: #0e241c;
+  --rose: #3d634f; /* Botanical Sage / Deep Olive */
+  --blush: #e3ece6; /* Soft Sage Mist */
+  --gold: #c5a25d; /* Warm Antique Gold */
+  --gold-light: #d9be84;
+  --cream: #faf8f5; /* Warm Ivory Cream */
+  --taupe: #45524b; /* Crisp Sage-Slate Text */
 
   /* Semantic Tokens with WCAG AAA Contrast */
-  --background: #faf6f1;
-  --foreground: #1d1518;
+  --background: #faf8f5;
+  --foreground: #141c18;
 
   --surface: #ffffff;
-  --surface-2: #f5eee8;
+  --surface-2: #f2f5f3;
 
   --card: #ffffff;
-  --card-foreground: #1d1518;
+  --card-foreground: #141c18;
 
   --popover: #ffffff;
-  --popover-foreground: #1d1518;
+  --popover-foreground: #141c18;
 
-  --primary: #3b1b2a;
-  --primary-foreground: #faf6f1;
+  --primary: #16382c;
+  --primary-foreground: #faf8f5;
 
-  --secondary: #f3eae3;
-  --secondary-foreground: #3b1b2a;
+  --secondary: #edf3ef;
+  --secondary-foreground: #16382c;
 
-  --muted: #ede3db;
-  --muted-foreground: #4a3a40;
+  --muted: #e7eeea;
+  --muted-foreground: #45524b;
 
-  --accent: #e8c7cd;
-  --accent-foreground: #3b1b2a;
+  --accent: #e3ece6;
+  --accent-foreground: #16382c;
 
   --destructive: #b32635;
   --destructive-foreground: #ffffff;
 
-  --border: #e5d5cd;
-  --input: #dcbfaf;
-  --ring: #966c23;
+  --border: #dde5e0;
+  --input: #cfdad3;
+  --ring: #c5a25d;
 
-  --shadow-soft: 0 10px 30px -10px rgba(59, 27, 42, 0.08);
-  --shadow-elevated: 0 20px 45px -15px rgba(59, 27, 42, 0.14);
-  --gradient-gold: linear-gradient(135deg, #966c23, #c6a15b);
-  --gradient-rose: linear-gradient(135deg, #9e4a62, #c98f9d);
-  --gradient-plum: linear-gradient(135deg, #3b1b2a, #250e1a);
+  --shadow-soft: 0 10px 30px -10px rgba(22, 56, 44, 0.08);
+  --shadow-elevated: 0 20px 45px -15px rgba(22, 56, 44, 0.14);
+  --gradient-gold: linear-gradient(135deg, #c5a25d, #d9be84);
+  --gradient-rose: linear-gradient(135deg, #3d634f, #698272);
+  --gradient-plum: linear-gradient(135deg, #16382c, #0e241c);
 }
 
 @layer base {
@@ -155,9 +161,9 @@
 @utility eyebrow {
   font-size: 0.8125rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--rose);
+  color: var(--gold);
 }
 
 @utility card-craft {
@@ -171,7 +177,7 @@
     box-shadow 0.35s ease;
   &:hover {
     transform: translateY(-4px);
-    border-color: var(--rose);
+    border-color: var(--gold);
     box-shadow: var(--shadow-elevated);
   }
 }

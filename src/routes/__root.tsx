@@ -77,13 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Élodie Hair Studio | Women’s Hair Salon in Ennis, Co. Clare" },
+      { title: "Twin Blades Hair Salon | Hair & Beauty Salon in Ennis, Co. Clare" },
       {
         name: "description",
         content:
-          "Discover professional women’s haircuts, colour, balayage, blow-dries and occasion styling at Élodie Hair Studio in Ennis, County Clare. Book your appointment today.",
+          "Discover professional sculptured cuts, contoured colour, balayage, blow-dries and occasion styling at Twin Blades Hair Salon in Ennis, County Clare. Celebrating nearly 29 years in business.",
       },
-      { property: "og:site_name", content: "Élodie Hair Studio" },
+      { property: "og:site_name", content: "Twin Blades Hair Salon" },
       { property: "og:locale", content: "en_IE" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

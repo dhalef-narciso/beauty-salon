@@ -21,7 +21,7 @@ import {
   ArrowRight,
   ShieldCheck,
   Award,
-  Coffee,
+  Sparkle,
 } from "lucide-react";
 
 import heroImg from "@/assets/hero.jpg";
@@ -43,7 +43,7 @@ const jsonLd = {
   url: "/",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "4 Barrack St, Clonroad Beg",
+    streetAddress: "04 Barrack Street",
     addressLocality: "Ennis",
     addressRegion: "Co. Clare",
     postalCode: "V95 VNE4",
@@ -57,21 +57,9 @@ const jsonLd = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Tuesday", "Wednesday"],
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       opens: "09:00",
-      closes: "17:30",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Thursday", "Friday"],
-      opens: "09:00",
-      closes: "19:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Saturday"],
-      opens: "08:30",
-      closes: "17:00",
+      closes: "18:00",
     },
   ],
 };
@@ -81,19 +69,19 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: `${SALON_CONFIG.name} | Women’s Hair Salon in Ennis, Co. Clare`,
+        title: `${SALON_CONFIG.name} | Hair & Beauty Salon in Ennis, Co. Clare`,
       },
       {
         name: "description",
-        content: `Discover professional women’s haircuts, colour, balayage, blow-dries and occasion styling at ${SALON_CONFIG.name} in Ennis, County Clare. Book your appointment today.`,
+        content: `Discover professional sculptured cuts, contoured colour, balayage, blow-dries and occasion styling at ${SALON_CONFIG.name} in Ennis, County Clare. In business for 29 years.`,
       },
       {
         property: "og:title",
-        content: `${SALON_CONFIG.name} | Women’s Hair Salon in Ennis, Co. Clare`,
+        content: `${SALON_CONFIG.name} | Hair & Beauty Salon in Ennis, Co. Clare`,
       },
       {
         property: "og:description",
-        content: `From precision cuts and dimensional colour to elegant styling and restorative treatments, we create personalised looks that help you feel confident and beautiful.`,
+        content: SALON_CONFIG.description,
       },
       { property: "og:type", content: "business.business" },
       { property: "og:locale", content: "en_IE" },
@@ -122,7 +110,7 @@ const SERVICE_ICONS: Record<string, typeof Scissors> = {
   "bridal-occasion": Crown,
 };
 
-const BENEFIT_ICONS = [HeartHandshake, Award, ShieldCheck, Coffee];
+const BENEFIT_ICONS = [Award, HeartHandshake, Sparkle, ShieldCheck];
 
 function Index() {
   const [open, setOpen] = useState(false);
@@ -171,7 +159,7 @@ function Index() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-rose/25 selection:text-plum">
+    <div className="min-h-screen bg-background text-foreground selection:bg-gold/20 selection:text-plum">
       {/* HEADER & NAVIGATION */}
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -181,21 +169,21 @@ function Index() {
         }`}
       >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-10">
-          {/* Refined Salon Logo */}
+          {/* Authentic Instagram Logo Brand */}
           <a
             href="#top"
             className="group flex items-center gap-3 transition-opacity hover:opacity-90"
             aria-label={`${SALON_CONFIG.name} Home`}
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-full border border-rose/50 bg-blush/30 text-plum transition-transform duration-300 group-hover:scale-105">
-              <Sparkles className="h-5 w-5 text-gold" aria-hidden="true" />
+            <div className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/50 bg-white shadow-xs">
+              <span className="font-serif text-xl font-bold text-gold">|</span>
             </div>
             <div className="leading-tight">
-              <span className="block font-serif text-2xl font-semibold tracking-wide text-plum">
-                {SALON_CONFIG.name}
+              <span className="block font-serif text-2xl font-bold tracking-wider text-plum">
+                {SALON_CONFIG.shortName}
               </span>
               <span className="block text-[0.7rem] font-bold tracking-[0.25em] text-taupe uppercase">
-                Ennis · Co. Clare
+                Hair Salon · Ennis
               </span>
             </div>
           </a>
@@ -252,11 +240,11 @@ function Index() {
         >
           <div className="flex items-center justify-between border-b border-border/80 pb-5">
             <div className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-rose/50 bg-blush/30 text-plum">
-                <Sparkles className="h-4 w-4 text-gold" aria-hidden="true" />
+              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/50 bg-white shadow-xs">
+                <span className="font-serif text-base font-bold text-gold">|</span>
               </div>
-              <span className="font-serif text-xl font-semibold text-plum">
-                {SALON_CONFIG.name}
+              <span className="font-serif text-xl font-bold text-plum">
+                {SALON_CONFIG.shortName}
               </span>
             </div>
             <button
@@ -275,7 +263,7 @@ function Index() {
                 key={n.href}
                 href={n.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3.5 font-serif text-2xl font-semibold text-foreground transition-colors hover:bg-blush/25 hover:text-plum"
+                className="rounded-lg px-3 py-3.5 font-serif text-2xl font-semibold text-foreground transition-colors hover:bg-blush/40 hover:text-plum"
               >
                 {n.label}
               </a>
@@ -303,7 +291,7 @@ function Index() {
                 rel="noopener noreferrer"
                 className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-lg border border-border bg-white text-xs font-bold text-plum hover:bg-cream"
               >
-                <MessageCircle className="h-3.5 w-3.5 text-rose" aria-hidden="true" /> WhatsApp
+                <MessageCircle className="h-3.5 w-3.5 text-gold" aria-hidden="true" /> WhatsApp
               </a>
             </div>
           </div>
@@ -315,13 +303,13 @@ function Index() {
         <section className="relative flex min-h-[94svh] items-center overflow-hidden pt-20">
           <img
             src={heroImg}
-            alt="Bright and elegant women's hair salon interior with arched backlit mirrors and warm natural lighting"
+            alt="Bright and elegant salon interior with warm natural lighting and styling stations"
             width={1920}
             height={1080}
             fetchPriority="high"
             className="absolute inset-0 h-full w-full object-cover object-center"
           />
-          {/* Enhanced readability overlay */}
+          {/* Enhanced forest & cream readability gradient */}
           <div className="absolute inset-0 bg-gradient-to-r from-background/98 via-background/92 to-background/50 md:from-background/98 md:via-background/90 md:to-background/30" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/20" />
 
@@ -343,11 +331,12 @@ function Index() {
                   href="#contact"
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-plum px-8 text-sm font-bold tracking-wide text-cream shadow-sm transition-all hover:bg-plum-deep hover:shadow-md hover:-translate-y-0.5"
                 >
-                  Book Your Appointment <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  Book Your Appointment{" "}
+                  <ArrowRight className="h-4 w-4 text-gold" aria-hidden="true" />
                 </a>
                 <a
                   href="#services"
-                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-rose/70 bg-white/90 px-7 text-sm font-bold tracking-wide text-plum backdrop-blur-xs transition-colors hover:bg-white hover:border-plum"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-gold/70 bg-white/90 px-7 text-sm font-bold tracking-wide text-plum backdrop-blur-xs transition-colors hover:bg-gold hover:text-white hover:border-gold"
                 >
                   Explore Our Services
                 </a>
@@ -372,7 +361,7 @@ function Index() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 font-bold text-plum hover:underline"
                 >
-                  <MessageCircle className="h-4 w-4 text-rose" aria-hidden="true" />
+                  <MessageCircle className="h-4 w-4 text-gold" aria-hidden="true" />
                   Message via WhatsApp
                 </a>
               </div>
@@ -404,8 +393,8 @@ function Index() {
               Everything Your Hair Deserves
             </h2>
             <p className="mt-4 text-base sm:text-lg leading-relaxed text-foreground font-normal">
-              Discover professional hair services tailored to your style, hair type and goals. Every
-              appointment begins with a personalised consultation.
+              From sculptured cuts to contoured dimensional colour, discover hair services tailored
+              to your style, texture and goals. Every appointment begins with professional advice.
             </p>
           </div>
 
@@ -420,11 +409,11 @@ function Index() {
                 >
                   <div>
                     <div className="flex items-center justify-between">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-blush/30 text-plum transition-colors group-hover:bg-blush/50">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-blush/30 text-plum transition-colors group-hover:bg-blush/60">
                         <Icon className="h-6 w-6 text-gold" aria-hidden="true" />
                       </div>
                       {service.tag && (
-                        <span className="rounded-full bg-rose/20 px-3.5 py-1 text-xs font-bold tracking-wider text-plum uppercase">
+                        <span className="rounded-full bg-blush px-3.5 py-1 text-xs font-bold tracking-wider text-plum uppercase">
                           {service.tag}
                         </span>
                       )}
@@ -452,7 +441,7 @@ function Index() {
                     <button
                       type="button"
                       onClick={() => handleSelectService(service.title)}
-                      className="mt-5 inline-flex w-full min-h-11 items-center justify-center gap-2 rounded-full border border-rose/50 bg-cream px-4 text-xs font-bold tracking-wider text-plum uppercase transition-colors hover:bg-plum hover:text-cream hover:border-plum"
+                      className="mt-5 inline-flex w-full min-h-11 items-center justify-center gap-2 rounded-full border border-gold/60 bg-cream px-4 text-xs font-bold tracking-wider text-plum uppercase transition-colors hover:bg-plum hover:text-cream hover:border-plum"
                     >
                       Book This Service
                     </button>
@@ -470,24 +459,24 @@ function Index() {
           </div>
         </section>
 
-        {/* ABOUT / THE SALON */}
+        {/* ABOUT / THE SALON & 29 YEARS HERITAGE */}
         <section id="about" className="border-y border-border bg-surface-2/70">
           <div className="mx-auto grid max-w-7xl gap-12 px-5 py-24 lg:grid-cols-2 lg:items-center lg:px-10 lg:py-32">
             <div>
-              <p className="eyebrow">ABOUT THE SALON</p>
+              <p className="eyebrow">ABOUT TWIN BLADES</p>
               <h2 className="mt-3 text-fluid-section font-semibold text-plum">
-                A Personalised Approach to Beautiful, Healthy Hair
+                Celebrating Nearly 29 Years in Ennis
               </h2>
               <p className="mt-6 text-base sm:text-lg leading-relaxed text-foreground font-normal">
-                At {SALON_CONFIG.name}, we believe exceptional hairdressing begins with listening.
-                Every cut, colour transformation, and styling appointment is shaped around your
-                lifestyle, facial features, and the unique texture of your hair.
+                At {SALON_CONFIG.shortName}, we are proud to have served the wonderful County Clare
+                community for nearly twenty-nine years. Voted among the top five hair salons in
+                Clare, our craft is built on genuine listening, expert advice, and tailored
+                hairdressing.
               </p>
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-foreground font-normal">
-                Our space was curated to be a welcoming escape in Ennis — filled with warm natural
-                light, botanical accents, and calming energy. Whether you are visiting for a
-                signature blow-dry or a complete balayage transformation, our team is committed to
-                delivering hair you adore living in.
+                From everyday precision maintenance to complete contoured colour transformations,
+                our welcoming salon on Barrack Street is designed to be your sanctuary of
+                relaxation. We also offer a dedicated, quiet **Beauty Room** on our private floor.
               </p>
 
               {/* 4 Pillars of "Why Choose Us" */}
@@ -496,7 +485,7 @@ function Index() {
                   const Icon = BENEFIT_ICONS[idx % BENEFIT_ICONS.length];
                   return (
                     <div key={item.title} className="flex gap-3.5">
-                      <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blush/40 text-plum">
+                      <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blush/50 text-plum">
                         <Icon className="h-4 w-4 text-gold" aria-hidden="true" />
                       </div>
                       <div>
@@ -516,7 +505,7 @@ function Index() {
               <div className="overflow-hidden rounded-2xl border border-border shadow-md">
                 <img
                   src={aboutImg}
-                  alt="Hairstylist in an elegant warm salon consulting with a client with luminous hair"
+                  alt="Stylist consulting with a client in a warm salon setting"
                   width={1200}
                   height={900}
                   loading="lazy"
@@ -525,11 +514,11 @@ function Index() {
               </div>
               <div className="absolute -bottom-6 -left-4 hidden sm:block max-w-xs rounded-xl border border-border bg-white p-5 shadow-lg">
                 <p className="font-serif text-base italic font-medium text-plum">
-                  "Our philosophy is simple: healthy hair first, precision always, and a style you
-                  can recreate with confidence."
+                  "Nearly 29 years of passion: sculptured cuts, contoured colour, and hair you love
+                  wearing every single day."
                 </p>
-                <p className="mt-2 text-xs font-bold text-rose uppercase tracking-wider">
-                  Salon Team · Ennis
+                <p className="mt-2 text-xs font-bold text-gold uppercase tracking-wider">
+                  Twin Blades Team · Ennis, Clare
                 </p>
               </div>
             </div>
@@ -545,8 +534,8 @@ function Index() {
                 Transformations & Styling
               </h2>
               <p className="mt-3 max-w-xl text-base leading-relaxed text-foreground font-normal">
-                A glimpse of recent client work crafted in our Ennis chairs — from dimensional
-                balayage and precision layered cuts to bridal occasions.
+                A glimpse of recent client work crafted in our Ennis chairs — sculptured cuts,
+                contoured colour, highlights, and occasion styling.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -554,16 +543,16 @@ function Index() {
                 href={SALON_CONFIG.contact.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border bg-white px-5 text-xs font-bold text-plum transition-colors hover:border-rose hover:bg-cream"
+                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border bg-white px-5 text-xs font-bold text-plum transition-colors hover:border-gold hover:bg-cream"
               >
-                <Instagram className="h-4 w-4 text-rose" aria-hidden="true" />
-                Follow on Instagram
+                <Instagram className="h-4 w-4 text-gold" aria-hidden="true" />
+                Follow @twin.blades
               </a>
               <a
                 href={SALON_CONFIG.contact.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border bg-white px-5 text-xs font-bold text-plum transition-colors hover:border-rose hover:bg-cream"
+                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border bg-white px-5 text-xs font-bold text-plum transition-colors hover:border-gold hover:bg-cream"
               >
                 <Facebook className="h-4 w-4 text-gold" aria-hidden="true" />
                 Facebook
@@ -576,14 +565,14 @@ function Index() {
             {[
               {
                 src: gallery1,
-                title: "Precision Cut & Blow-Dry",
+                title: "Sculptured Cut & Blow-Dry",
                 subtitle: "Layered movement & soft caramel tones",
                 alt: "Precision layered haircut with bouncy polished blow-dry",
               },
               {
                 src: gallery2,
-                title: "Highlights & Balayage",
-                subtitle: "Seamless golden blonde dimensional blend",
+                title: "Contoured Colour & Balayage",
+                subtitle: "Seamless golden dimensional blend",
                 alt: "Multidimensional warm honey and blonde balayage with soft beach waves",
               },
               {
@@ -594,7 +583,7 @@ function Index() {
               },
               {
                 src: gallery4,
-                title: "Restorative Treatment",
+                title: "Restorative Gloss Treatment",
                 subtitle: "High-shine silk gloss & deep hydration",
                 alt: "Silky, glossy chestnut brunette hair after a restorative hydration salon treatment",
               },
@@ -625,10 +614,10 @@ function Index() {
           <div className="mx-auto max-w-5xl px-5 py-24 text-center lg:py-32">
             <p className="eyebrow">CLIENT LOVE</p>
             <h2 className="mt-3 text-fluid-section font-semibold text-plum">
-              Loved by Our Local Clients
+              Loved by Our Local Community
             </h2>
             <p className="mt-3 max-w-xl mx-auto text-base text-foreground font-normal">
-              Personalised care and healthy hair results that keep our clients coming back.
+              Voted among the top five hair salons in Clare with 29 years of dedicated service.
             </p>
 
             {/* Testimonials Grid */}
@@ -644,7 +633,7 @@ function Index() {
                         <Star key={idx} className="h-4 w-4 fill-gold text-gold" />
                       ))}
                     </div>
-                    <p className="mt-4 text-xs font-bold text-rose uppercase tracking-wider">
+                    <p className="mt-4 text-xs font-bold text-gold uppercase tracking-wider">
                       {rev.service}
                     </p>
                     <p className="mt-2 text-sm sm:text-base leading-relaxed text-foreground font-normal italic">
@@ -664,7 +653,7 @@ function Index() {
                 href={SALON_CONFIG.contact.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-12 items-center gap-2 rounded-full border-2 border-rose/60 bg-white px-8 text-xs font-bold tracking-wider text-plum transition-colors hover:bg-cream hover:border-plum"
+                className="inline-flex min-h-12 items-center gap-2 rounded-full border-2 border-gold/60 bg-white px-8 text-xs font-bold tracking-wider text-plum transition-colors hover:bg-cream hover:border-plum"
               >
                 View Location & Reviews on Google Maps
               </a>
@@ -675,20 +664,21 @@ function Index() {
         {/* READY FOR YOUR NEXT LOOK? CTA */}
         <section className="relative overflow-hidden bg-plum py-24 text-cream">
           <div className="relative mx-auto max-w-4xl px-5 text-center lg:px-10">
-            <p className="text-xs font-bold tracking-[0.25em] text-blush uppercase">
+            <p className="text-xs font-bold tracking-[0.25em] text-gold uppercase">
               YOUR PERSONAL CONSULTATION
             </p>
             <h2 className="mt-4 font-serif text-3xl font-semibold text-cream sm:text-4xl lg:text-5xl">
               Ready for Your Next Look?
             </h2>
             <p className="mt-5 max-w-xl mx-auto text-lg text-cream/90 font-normal leading-relaxed">
-              Book your appointment and let us create a look that feels completely you.
+              Book your appointment and let our experienced stylists craft a sculptured cut and
+              contoured colour designed around you.
             </p>
 
             <div className="mt-9 flex flex-col justify-center gap-3.5 sm:flex-row">
               <a
                 href="#contact"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-cream px-8 text-sm font-bold tracking-wide text-plum transition-all hover:bg-white hover:shadow-md hover:-translate-y-0.5"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gold px-8 text-sm font-bold tracking-wide text-plum-deep shadow-sm transition-all hover:bg-gold-light hover:shadow-md hover:-translate-y-0.5"
               >
                 Book Appointment
               </a>
@@ -696,9 +686,9 @@ function Index() {
                 href={SALON_CONFIG.contact.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-blush/70 px-8 text-sm font-bold tracking-wide text-cream transition-colors hover:bg-rose/25"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-gold/70 px-8 text-sm font-bold tracking-wide text-cream transition-colors hover:bg-gold/20"
               >
-                <MessageCircle className="h-4 w-4 text-blush" aria-hidden="true" />
+                <MessageCircle className="h-4 w-4 text-gold" aria-hidden="true" />
                 Call or WhatsApp
               </a>
             </div>
@@ -715,14 +705,13 @@ function Index() {
                 We Look Forward to Welcoming You
               </h2>
               <p className="mt-4 text-base leading-relaxed text-foreground font-normal">
-                To request an appointment, please complete the form or reach out directly by phone
-                or WhatsApp. We are glad to help with styling advice, colour patch tests, and
-                consultations.
+                To request an appointment, please complete the form below or contact us directly on
+                phone or WhatsApp. We look forward to seeing you at 04 Barrack Street.
               </p>
 
               <div className="mt-8 flex flex-col gap-6">
                 <div className="flex gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush/40 text-plum">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush/50 text-plum">
                     <MapPin className="h-5 w-5 text-gold" aria-hidden="true" />
                   </div>
                   <div>
@@ -734,7 +723,7 @@ function Index() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush/40 text-plum">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush/50 text-plum">
                     <Clock className="h-5 w-5 text-gold" aria-hidden="true" />
                   </div>
                   <div className="w-full">
@@ -754,7 +743,7 @@ function Index() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush/40 text-plum">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush/50 text-plum">
                     <Phone className="h-5 w-5 text-gold" aria-hidden="true" />
                   </div>
                   <div>
@@ -771,7 +760,7 @@ function Index() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush/40 text-plum">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush/50 text-plum">
                     <Mail className="h-5 w-5 text-gold" aria-hidden="true" />
                   </div>
                   <div>
@@ -910,7 +899,7 @@ function Index() {
                 {sent && (
                   <div
                     role="status"
-                    className="rounded-lg border border-rose/40 bg-blush/25 p-4 text-sm font-medium text-plum flex items-center gap-3"
+                    className="rounded-lg border border-gold/40 bg-blush/35 p-4 text-sm font-medium text-plum flex items-center gap-3"
                   >
                     <CheckCircle2 className="h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
                     <p>
@@ -930,11 +919,11 @@ function Index() {
         <div className="mx-auto flex max-w-7xl flex-col gap-10 px-5 py-14 pb-28 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:pb-14">
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-rose/50 bg-blush/30 text-plum">
-                <Sparkles className="h-5 w-5 text-gold" aria-hidden="true" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/50 bg-white shadow-xs">
+                <span className="font-serif text-lg font-bold text-gold">|</span>
               </div>
-              <span className="font-serif text-2xl font-semibold text-plum">
-                {SALON_CONFIG.name}
+              <span className="font-serif text-2xl font-bold tracking-wider text-plum">
+                {SALON_CONFIG.shortName}
               </span>
             </div>
             <p className="mt-3 max-w-sm text-sm font-medium leading-relaxed text-taupe">
@@ -974,27 +963,27 @@ function Index() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${SALON_CONFIG.name} on Instagram`}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-white text-plum transition-colors hover:border-rose hover:bg-cream"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-white text-plum transition-colors hover:border-gold hover:bg-cream"
               >
-                <Instagram className="h-5 w-5" aria-hidden="true" />
+                <Instagram className="h-5 w-5 text-gold" aria-hidden="true" />
               </a>
               <a
                 href={SALON_CONFIG.contact.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${SALON_CONFIG.name} on Facebook`}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-white text-plum transition-colors hover:border-rose hover:bg-cream"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-white text-plum transition-colors hover:border-gold hover:bg-cream"
               >
-                <Facebook className="h-5 w-5" aria-hidden="true" />
+                <Facebook className="h-5 w-5 text-gold" aria-hidden="true" />
               </a>
               <a
                 href={SALON_CONFIG.contact.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${SALON_CONFIG.name} on Google Maps`}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-white text-plum transition-colors hover:border-rose hover:bg-cream"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-white text-plum transition-colors hover:border-gold hover:bg-cream"
               >
-                <MapPin className="h-5 w-5" aria-hidden="true" />
+                <MapPin className="h-5 w-5 text-gold" aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -1017,9 +1006,9 @@ function Index() {
           href={SALON_CONFIG.contact.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex min-h-12 items-center justify-center gap-1.5 rounded-full border-2 border-rose/60 bg-white font-bold text-xs tracking-wider text-plum shadow-xs uppercase"
+          className="flex min-h-12 items-center justify-center gap-1.5 rounded-full border-2 border-gold/70 bg-white font-bold text-xs tracking-wider text-plum shadow-xs uppercase"
         >
-          <MessageCircle className="h-4 w-4 text-rose" aria-hidden="true" /> WhatsApp
+          <MessageCircle className="h-4 w-4 text-gold" aria-hidden="true" /> WhatsApp
         </a>
       </div>
     </div>
