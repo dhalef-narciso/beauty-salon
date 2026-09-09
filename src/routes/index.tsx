@@ -125,7 +125,7 @@ function Index() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [sent, setSent] = useState(false);
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<{ name?: string; contact?: string; message?: string }>({});
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -140,7 +140,7 @@ function Index() {
     const name = String(form.get("name") ?? "").trim();
     const contact = String(form.get("contact") ?? "").trim();
     const message = String(form.get("message") ?? "").trim();
-    const next: Record<string, string> = {};
+    const next: { name?: string; contact?: string; message?: string } = {};
     if (name.length < 2) next.name = "Please enter your name.";
     if (!/^([^\s@]+@[^\s@]+\.[^\s@]+|[+\d][\d\s()-]{6,})$/.test(contact))
       next.contact = "Enter a valid email address or phone number.";
