@@ -1,16 +1,15 @@
 /**
  * Centralized Salon Data Configuration
- * Demo Salon: Luxe Hair & Beauty Salon
+ * Premium Nails & Eyebrows Studio
  */
 
 export interface SalonService {
   id: string;
   title: string;
-  category: string;
+  category: "Nails" | "Brows";
   description: string;
   price: string;
   duration: string;
-  requiresConsultation: boolean;
   tag?: string;
 }
 
@@ -23,13 +22,64 @@ export interface SalonReview {
   date: string;
 }
 
+export interface DifferenceItem {
+  title: string;
+  description: string;
+}
+
 export const SALON_CONFIG = {
-  name: "Luxe Hair & Beauty Salon",
-  shortName: "Luxe Salon",
-  tagline: "Beautiful Hair, Designed Around You",
-  eyebrow: "HAIR & BEAUTY SALON",
+  name: "Luxe Nails & Brow Studio",
+  shortName: "Luxe Studio",
+  tagline: "Beautiful Details, Made Just for You",
+  subheadline:
+    "Professional nail and eyebrow treatments designed to enhance your natural beauty.",
+  eyebrow: "NAILS & BROWS STUDIO",
+  badge: "Professional care • Beautiful results • Relaxing experience",
   description:
-    "Professional advice, sculptured cuts, contoured colour, and glamorous finishes. Celebrating trusted hairdressing and bespoke beauty care.",
+    "Delicate, long-lasting manicures, builder gel sculpting, and precision brow design. A calm, sophisticated space focused on hygiene, precision, and personalized care.",
+
+  // Feature Section ("Beauty is in the details.")
+  featuredSection: {
+    headline: "Beauty is in the details.",
+    description:
+      "Every treatment is completely personalized, combining advanced professional techniques with meticulous attention to the smallest details for healthy, radiant, and long-lasting results.",
+    differentiators: [
+      {
+        title: "Personalised Treatments",
+        description:
+          "Customized shaping, tones, and styling tailored to your natural nails, brow geometry, and personal aesthetic.",
+      },
+      {
+        title: "Professional Products",
+        description:
+          "Premium salon-grade builder gels, gentle vegan polishes, and dermatologically tested brow pigments that protect your health.",
+      },
+      {
+        title: "Attention to Detail",
+        description:
+          "Medical-grade sterilization, flawless cuticle precision, and unhurried appointments focused entirely on you.",
+      },
+    ] as DifferenceItem[],
+  },
+
+  // About the Specialist
+  specialist: {
+    title: "Meet Your Beauty Specialist",
+    name: "Elena Vance",
+    role: "Certified Nail & Brow Specialist",
+    quote:
+      "True beauty is created in the subtle, meticulous details. My studio is dedicated to providing you with gentle care, uncompromising hygiene, and results you will adore.",
+    bio: [
+      "With years of passionate experience in advanced manicures, builder gel sculpting, and brow architecture, I believe your beauty ritual should be a calming, luxurious pause in your day.",
+      "Every client receives dedicated 1-on-1 attention, beginning with an individual consultation to understand your lifestyle, nail health, and desired brow shape. Using exclusively certified, cruelty-free professional formulations, I strive for enduring elegance that feels effortlessly natural.",
+    ],
+    features: [
+      "Medical-Grade Sterilization",
+      "Cruelty-Free & Vegan Formulations",
+      "Private 1-on-1 Consultation",
+      "Long-Lasting High-Gloss Finish",
+    ],
+  },
 
   // Contact & Location Details
   contact: {
@@ -37,118 +87,101 @@ export const SALON_CONFIG = {
     phoneDisplay: "065 684 2660",
     phoneTel: "+353656842660",
     whatsapp: "https://wa.me/353656842660",
-    email: "appointments@luxesalon.com",
+    email: "hello@luxenailsandbrows.com",
     mapsUrl:
       "https://www.google.com/maps?q=4+Barrack+St,+Clonroad+Beg,+Ennis,+Co.+Clare,+V95+VNE4,+Ireland",
     mapsEmbedUrl:
       "https://www.google.com/maps?q=4%20Barrack%20St%2C%20Clonroad%20Beg%2C%20Ennis%2C%20Co.%20Clare%2C%20V95%20VNE4%2C%20Ireland&output=embed",
-    instagram: "https://www.instagram.com/luxesalon",
-    instagramHandle: "@luxesalon",
-    facebook: "https://www.facebook.com/luxesalon",
+    instagram: "https://www.instagram.com/luxenailsandbrows",
+    instagramHandle: "@luxenailsandbrows",
+    facebook: "https://www.facebook.com/luxenailsandbrows",
     bookingUrl: "#contact",
   },
 
-  // Hours of Operation from Instagram Bio (Monday-Saturday | 9-6)
+  // Hours of Operation
   hours: [
-    { days: "Monday – Saturday", time: "9:00 AM – 6:00 PM" },
+    { days: "Monday – Friday", time: "9:00 AM – 6:30 PM" },
+    { days: "Saturday", time: "9:00 AM – 6:00 PM" },
     { days: "Sunday", time: "Closed" },
   ],
 
-  // Key Trust Highlights from Instagram
-  trustHighlights: [
-    { title: "29 Years in Business", desc: "Top 5 hair salon in Co. Clare" },
-    { title: "Contoured Colour & Cuts", desc: "Tailored to your facial features & goals" },
-    { title: "Private Beauty Room", desc: "Quiet dedicated room on private floor" },
-  ],
-
-  // Why Choose Us Pillars
-  whyChooseUs: [
-    {
-      title: "29 Years of Heritage",
-      description:
-        "Proudly serving our amazing County Clare community for nearly 29 years, voted among the top 5 hair salons in Clare.",
-    },
-    {
-      title: "Professional Advice",
-      description:
-        "Every visit begins with expert consultation to craft sculptured cuts and contoured colour tailored to your lifestyle.",
-    },
-    {
-      title: "Contoured Colour & Balayage",
-      description:
-        "Specialists in multi-tonal colour melting, seamless blonde balayage, and restorative hydration treatments.",
-    },
-    {
-      title: "Private Beauty Room",
-      description:
-        "In addition to our welcoming ground floor salon, we offer a dedicated, spacious private beauty room upstairs.",
-    },
-  ],
-
-  // Services Menu
+  // Core Services Menu (8 items: Nails & Brows)
   services: [
     {
-      id: "cut-blowdry",
-      title: "Sculptured Cut & Blow-Dry",
-      category: "Styling & Cut",
+      id: "classic-manicure",
+      title: "Classic Manicure",
+      category: "Nails",
       description:
-        "A personalised consultation, precision haircut and professional blow-dry created to complement your features and lifestyle.",
-      price: "From €65",
-      duration: "60 mins",
-      requiresConsultation: false,
+        "Detailed cuticle care, precision nail shaping, gentle buffing, relaxing hand massage, and professional long-wear polish.",
+      price: "From €35",
+      duration: "45 mins",
+    },
+    {
+      id: "gel-polish",
+      title: "Gel Polish",
+      category: "Nails",
+      description:
+        "High-gloss, chip-free gel manicure with expert nail prep, durable colour application, and nourishing cuticle treatment.",
+      price: "From €45",
+      duration: "50 mins",
       tag: "Popular",
     },
     {
-      id: "hair-colour",
-      title: "Contoured Colour",
-      category: "Colouring",
+      id: "biab-builder-gel",
+      title: "BIAB / Builder Gel",
+      category: "Nails",
       description:
-        "Beautiful, customised colour ranging from rich all-over tones to natural-looking dimensional results.",
-      price: "Price on consultation",
-      duration: "90–120 mins",
-      requiresConsultation: true,
-    },
-    {
-      id: "highlights-balayage",
-      title: "Highlights & Balayage",
-      category: "Lightening & Tone",
-      description:
-        "Soft highlights, bright blondes and seamlessly blended balayage tailored to your desired finish.",
-      price: "Price on consultation",
-      duration: "120–180 mins",
-      requiresConsultation: true,
+        "Strengthening builder gel overlay designed to protect natural nails, promote healthy growth, and deliver an immaculate structured finish.",
+      price: "From €55",
+      duration: "65 mins",
       tag: "Signature",
     },
     {
-      id: "blow-dry-styling",
-      title: "Glamorous Blow-Dry & Styling",
-      category: "Finish & Volume",
+      id: "nail-extensions",
+      title: "Nail Extensions",
+      category: "Nails",
       description:
-        "A smooth, polished or voluminous finish for everyday confidence or a special occasion.",
-      price: "From €40",
-      duration: "45 mins",
-      requiresConsultation: false,
+        "Seamless full-cover tips or sculpted gel extensions tailored to your ideal length, shape, and natural curvature.",
+      price: "From €70",
+      duration: "80 mins",
     },
     {
-      id: "hair-treatments",
-      title: "Restorative Hair Treatments",
-      category: "Care & Repair",
+      id: "nail-art",
+      title: "Nail Art",
+      category: "Nails",
       description:
-        "Restorative treatments designed to hydrate, strengthen and revive dry, damaged or colour-treated hair.",
-      price: "From €35",
+        "Bespoke hand-painted nail artistry, micro French tips, chrome glazes, gold foil accents, or minimalist geometric designs.",
+      price: "From €15",
+      duration: "20–35 mins",
+      tag: "Custom",
+    },
+    {
+      id: "eyebrow-shaping",
+      title: "Eyebrow Shaping",
+      category: "Brows",
+      description:
+        "Precision brow mapping, delicate waxing, threading, and tweezing tailored to harmonise with your facial features.",
+      price: "From €22",
       duration: "30 mins",
-      requiresConsultation: false,
-      tag: "Revitalise",
     },
     {
-      id: "bridal-occasion",
-      title: "Bridal & Occasion Hair",
-      category: "Event Styling",
+      id: "eyebrow-tinting",
+      title: "Eyebrow Tinting",
+      category: "Brows",
       description:
-        "Elegant, long-lasting styling for weddings, communions, celebrations and unforgettable moments.",
-      price: "Price on consultation",
-      duration: "75–90 mins",
-      requiresConsultation: true,
+        "Custom-blended tinting that adds depth, definition, and rich tone to sparse or fair brow hairs for a fuller appearance.",
+      price: "From €20",
+      duration: "25 mins",
+    },
+    {
+      id: "brow-lamination",
+      title: "Brow Lamination",
+      category: "Brows",
+      description:
+        "Keratin-infused brow lifting technique that restructures brow hairs into a feathered, fluffy, and flawlessly styled shape.",
+      price: "From €60",
+      duration: "55 mins",
+      tag: "Trending",
     },
   ] as SalonService[],
 
@@ -156,30 +189,30 @@ export const SALON_CONFIG = {
   reviews: [
     {
       id: "rev-1",
-      author: "Sarah M.",
+      author: "Olivia Richardson",
       rating: 5,
-      service: "Highlights & Balayage",
+      service: "BIAB / Builder Gel",
       comment:
-        "The contoured colour blend is simply stunning. They have looked after my hair for years and always deliver the most natural golden finish. A true gem in Ennis!",
-      date: "Local Client",
+        "The BIAB treatment completely transformed my natural nails. Over four weeks later without a single lift or chip! The cuticle work and shape are absolute perfection.",
+      date: "Verified Client",
     },
     {
       id: "rev-2",
-      author: "Claire O'B.",
+      author: "Sophie Lauren",
       rating: 5,
-      service: "Sculptured Cut",
+      service: "Brow Lamination & Shaping",
       comment:
-        "The best hair salon in Ennis by far! 29 years of experience really shows — the sculptured cut has beautiful movement and stays perfect for weeks.",
-      date: "Local Client",
+        "My brows have never looked this fluffy, symmetrical, and natural. Elena takes her time with mapping and makes you feel so pampered. The studio is spotless and calming.",
+      date: "Verified Client",
     },
     {
       id: "rev-3",
-      author: "Aoife K.",
+      author: "Camille Beaumont",
       rating: 5,
-      service: "Occasion Styling",
+      service: "Gel Polish & Minimalist Nail Art",
       comment:
-        "Created an incredible occasion style for our family celebration. The team is so warm, attentive, and talented. Highly recommend!",
-      date: "Local Client",
+        "Elena's attention to detail is unmatched. The micro-French and gold foil details were so delicate and chic. Booking is seamless and the atmosphere is pure serenity.",
+      date: "Verified Client",
     },
   ] as SalonReview[],
 };

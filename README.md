@@ -1,59 +1,75 @@
-# Luxe Hair & Beauty Salon Landing Page (Demo)
+# Luxe Nails & Brow Studio Landing Page
 
-A modern, elegant, and high-converting landing page for a premium hair and beauty salon demo.
+A modern, elegant, delicate, and high-converting landing page for **Luxe Nails & Brow Studio**, an upscale beauty studio focused on professional nail and eyebrow treatments.
 
-### SALON INFORMATION & CUSTOMIZATION
+---
 
-All business details, services, opening hours, contact details, and social links are centrally organized and easily editable in:
+### STUDIO INFORMATION & CUSTOMIZATION
+
+All business details, services, opening hours, contact details, specialist information, and social links are centrally organized and easily editable in:
 
 📁 `src/data/salon.ts`
 
-- **Salon Name**: `Luxe Hair & Beauty Salon` (Short name: `Luxe Salon`)
-- **Category / Industry**: Luxury Hair & Beauty Salon
+- **Studio Name**: `Luxe Nails & Brow Studio` (Short name: `Luxe Studio`)
+- **Category / Industry**: Professional Nails & Eyebrows Studio
 - **Location**: 04 Barrack Street, Ennis, Ireland V95 VNE4
 - **Phone**: +353 65 684 2660
-- **WhatsApp**: Available via verified wa.me link
-- **Email**: appointments@luxesalon.com
+- **WhatsApp**: Available via verified direct WhatsApp link
+- **Email**: hello@luxenailsandbrows.com
 
-### DESIGN SYSTEM
+---
 
-- **Aesthetic Direction**: Elegant, warm, feminine, and editorial with sophisticated typography and balanced contrast.
+### DESIGN SYSTEM & VISUAL IDENTITY
+
+- **Aesthetic Direction**: Delicate, feminine, minimalist, welcoming, and premium with ample whitespace and elegant typography.
 - **Palette**:
-  - Deep plum / burgundy: `#4A2535`
-  - Dusty rose: `#C98F9D`
-  - Soft blush: `#E8C7CD`
-  - Warm champagne gold: `#C6A15B`
-  - Cream / off-white: `#FAF6F1`
-  - Warm taupe: `#8A756C`
-  - Dark text: `#2B2225`
-  - White: `#FFFFFF`
+  - Warm Ivory Cream (Background): `#FAF8F5`
+  - Pure White (Cards): `#FFFFFF`
+  - Soft Nude & Warm Beige: `#F8F3EE` / `#EFE6DF`
+  - Delicate Powder Blush: `#F7ECE8`
+  - Brushed Antique Champagne Gold: `#C5A572`
+  - Deep Mocha Espresso (Headings & Primary CTA): `#2B2320`
+  - Warm Taupe (Body copy & secondary text): `#6B5C55`
 - **Typography**:
-  - Headings: _Playfair Display_ (sophisticated editorial serif)
-  - Body & UI: _Montserrat_ & _Inter_ (clean, contemporary, highly readable)
+  - Headings: _Playfair Display_ (refined editorial serif)
+  - Body & UI: _Plus Jakarta Sans_ (crisp, modern, highly legible sans-serif)
+
+---
 
 ### PAGE SECTIONS
 
-1. **Header & Navigation**: Fixed navigation with blurred backdrop on scroll, elegant salon logo with hair/beauty icon mark, quick "Book Appointment" CTA, and mobile drawer.
-2. **Hero Section**: Natural sunlit women's salon interior, single H1 (`Beautiful Hair, Designed Around You`), dual CTAs (`Book Your Appointment`, `Explore Our Services`), discreet Call/WhatsApp line, and core trust highlights.
-3. **Services Menu**: 6 dedicated salon services with editable price placeholders:
-   - Cut & Blow-Dry (From €65)
-   - Hair Colour (Price on consultation)
-   - Highlights & Balayage (Price on consultation)
-   - Blow-Dry & Styling (From €40)
-   - Hair Treatments (From €35)
-   - Bridal & Occasion Hair (Price on consultation)
-4. **About The Salon**: Personalized consultation philosophy, commitment to healthy hair, and 4 core client pillars.
-5. **Gallery / Transformations**: Responsive visual showcase of precision cuts, dimensional balayage, occasion styling, and restorative gloss treatments.
-6. **Client Reviews**: Authentic feedback layout with neutral local client testimonials and Google Maps review link.
-7. **Consultation CTA**: "Ready for Your Next Look?" full-width section with primary booking and direct messaging actions.
-8. **Visit & Contact Form**: Salon address, weekly operating hours, interactive booking request form with front-end validation, and embedded Google Maps view.
-9. **Footer & Mobile Action Bar**: Comprehensive directory links and a sticky mobile action bar for one-tap booking and WhatsApp communication.
+1. **Header & Navigation**: Fixed navigation with blurred backdrop on scroll, elegant studio monogram mark, navigation links, quick "Book an Appointment" CTA, and responsive mobile drawer.
+2. **Hero Section**: High-resolution studio photography of immaculate manicured hands, single H1 (*"Beautiful Details, Made Just for You"*), subheadline, dual CTAs, trust highlight badge, and discreet Call/WhatsApp links.
+3. **Services Menu**: 8 dedicated cards organized with category filters for **Nails** and **Brows**:
+   - Classic Manicure
+   - Gel Polish
+   - BIAB / Builder Gel
+   - Nail Extensions
+   - Nail Art
+   - Eyebrow Shaping
+   - Eyebrow Tinting
+   - Brow Lamination
+   Each card features price, duration, description, and a "Book Now" action that pre-selects the treatment in the booking form.
+4. **Philosophy Highlight ("Beauty is in the details.")**: Centered editorial statement with 3 core pillars:
+   - *Personalised Treatments*
+   - *Professional Products*
+   - *Attention to Detail*
+5. **Portfolio & Gallery**: High-resolution, natural-light showcase of classic nails, French BIAB builder gel, minimalist nail art, and brow lamination, with a direct "View More on Instagram" button.
+6. **Meet Your Beauty Specialist**: Dedicated profile featuring portrait photo, background, sterile hygiene protocols, cruelty-free formulas, and individual consultation standards.
+7. **Client Love (Testimonials)**: 3 authentic client reviews focusing on precision, long-lasting results, and welcoming atmosphere.
+8. **Call to Action ("Ready for your next beauty moment?")**: Striking yet delicate dark-mocha banner with primary booking action and WhatsApp connection.
+9. **Visit & Contact Form**: Address, hours, telephone, email, interactive Google Maps embed, and booking request form with live validation.
+10. **Footer & Mobile Action Bar**: Comprehensive directory links and a sticky mobile action bar for one-tap booking and WhatsApp communication.
+
+---
 
 ### LOCAL SEO
 
-- **Title**: `Luxe Hair & Beauty Salon | Luxury Hair & Beauty Studio`
-- **Description**: `Discover professional sculptured cuts, contoured colour, balayage, blow-dries and occasion styling at Luxe Hair & Beauty Salon. Book your appointment today.`
-- **Schema.org**: Structured JSON-LD for `BeautySalon` and `HairSalon` with address, telephone, price range, and opening hours.
+- **Title**: `Luxe Nails & Brow Studio | Professional Nails & Eyebrow Studio`
+- **Description**: `Professional nail and eyebrow treatments designed to enhance your natural beauty. Specialising in Classic Manicures, Gel Polish, BIAB Builder Gel, Nail Extensions, Nail Art, Brow Shaping, Brow Tinting, and Brow Lamination.`
+- **Schema.org**: Structured JSON-LD for `BeautySalon` and `NailSalon` with address, telephone, price range, and opening hours.
+
+---
 
 ### DEVELOPMENT
 

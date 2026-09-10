@@ -5,12 +5,12 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Luxe Hair & Beauty Salon Visual Identity:
- * - Deep Heritage Forest Green (#16382C): Storefront facade & primary contrast
- * - Warm Antique Gold (#C5A25D): Logo lettering & accent details
- * - Warm Ivory Cream (#FAF8F5): Clean, luminous background
- * - Botanical Sage / Olive (#4F735F & #E3ECE6): Editorial greenery & subtle badges
- * - Deep Charcoal Forest (#141C18 & #45524B): Crisp high-contrast readable text
+ * Luxe Nails & Brow Studio Visual Identity:
+ * - Warm Ivory White (#FAF8F5): Luminous, clean, spa-like background
+ * - Soft Nude & Warm Beige (#F6F1EC & #EFE6DF): Delicacy and serene balance
+ * - Soft Powder Blush (#F7ECE8 & #FDF7F5): Subtle feminine glow without saturation
+ * - Brushed Antique Champagne Gold (#C5A572 & #DFC89F): Discreet refined accents
+ * - Deep Espresso Mocha (#2B2320 & #6B5C55): Elegant, high-contrast, readable typography
  */
 
 @theme inline {
@@ -19,12 +19,12 @@
   --font-sans:
     "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-  --color-forest: var(--plum);
-  --color-plum: var(--plum);
-  --color-plum-deep: var(--plum-deep);
-  --color-sage: var(--rose);
-  --color-rose: var(--rose);
+  --color-mocha: var(--mocha);
+  --color-mocha-deep: var(--mocha-deep);
+  --color-nude: var(--nude);
+  --color-nude-light: var(--nude-light);
   --color-blush: var(--blush);
+  --color-blush-light: var(--blush-light);
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
   --color-cream: var(--cream);
@@ -63,55 +63,57 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.75rem;
 
-  /* Real Instagram Brand Palette */
-  --plum: #16382c; /* Deep Heritage Forest Green */
-  --plum-deep: #0e241c;
-  --rose: #3d634f; /* Botanical Sage / Deep Olive */
-  --blush: #e3ece6; /* Soft Sage Mist */
-  --gold: #c5a25d; /* Warm Antique Gold */
-  --gold-light: #d9be84;
-  --cream: #faf8f5; /* Warm Ivory Cream */
-  --taupe: #45524b; /* Crisp Sage-Slate Text */
+  /* Refined Nails & Brows Palette */
+  --mocha: #2b2320; /* Deep warm mocha espresso */
+  --mocha-deep: #1d1715;
+  --nude: #efe6df; /* Soft warm nude */
+  --nude-light: #f7f2ed;
+  --blush: #f7ece8; /* Delicate powder blush */
+  --blush-light: #fdf7f5;
+  --gold: #c5a572; /* Brushed antique champagne gold */
+  --gold-light: #e5d3b3;
+  --cream: #faf8f5; /* Warm luminous ivory */
+  --taupe: #6b5c55; /* Warm soft taupe for secondary text */
 
-  /* Semantic Tokens with WCAG AAA Contrast */
+  /* Semantic Design Tokens */
   --background: #faf8f5;
-  --foreground: #141c18;
+  --foreground: #2b2320;
 
   --surface: #ffffff;
-  --surface-2: #f2f5f3;
+  --surface-2: #f8f3ee;
 
   --card: #ffffff;
-  --card-foreground: #141c18;
+  --card-foreground: #2b2320;
 
   --popover: #ffffff;
-  --popover-foreground: #141c18;
+  --popover-foreground: #2b2320;
 
-  --primary: #16382c;
+  --primary: #2b2320;
   --primary-foreground: #faf8f5;
 
-  --secondary: #edf3ef;
-  --secondary-foreground: #16382c;
+  --secondary: #f4eae4;
+  --secondary-foreground: #2b2320;
 
-  --muted: #e7eeea;
-  --muted-foreground: #45524b;
+  --muted: #f1e8e2;
+  --muted-foreground: #6b5c55;
 
-  --accent: #e3ece6;
-  --accent-foreground: #16382c;
+  --accent: #f7ece8;
+  --accent-foreground: #2b2320;
 
   --destructive: #b32635;
   --destructive-foreground: #ffffff;
 
-  --border: #dde5e0;
-  --input: #cfdad3;
-  --ring: #c5a25d;
+  --border: #eadfd7;
+  --input: #e4d7ce;
+  --ring: #c5a572;
 
-  --shadow-soft: 0 10px 30px -10px rgba(22, 56, 44, 0.08);
-  --shadow-elevated: 0 20px 45px -15px rgba(22, 56, 44, 0.14);
-  --gradient-gold: linear-gradient(135deg, #c5a25d, #d9be84);
-  --gradient-rose: linear-gradient(135deg, #3d634f, #698272);
-  --gradient-plum: linear-gradient(135deg, #16382c, #0e241c);
+  --shadow-soft: 0 10px 30px -10px rgba(43, 35, 32, 0.05);
+  --shadow-elevated: 0 20px 45px -12px rgba(43, 35, 32, 0.09);
+  --gradient-gold: linear-gradient(135deg, #c5a572, #e5d3b3);
+  --gradient-blush: linear-gradient(135deg, #faf8f5, #f7ece8);
+  --gradient-hero-overlay: linear-gradient(to right, rgba(250, 248, 245, 0.98) 0%, rgba(250, 248, 245, 0.92) 50%, rgba(250, 248, 245, 0.4) 100%);
 }
 
 @layer base {
@@ -142,18 +144,18 @@
     font-weight: 600;
     letter-spacing: -0.01em;
     text-wrap: balance;
-    color: var(--plum);
+    color: var(--mocha);
   }
 }
 
 @utility text-fluid-hero {
-  font-size: clamp(2.35rem, 5.2vw, 3.85rem);
-  line-height: 1.18;
-  letter-spacing: -0.01em;
+  font-size: clamp(2.35rem, 5vw, 3.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
 }
 
 @utility text-fluid-section {
-  font-size: clamp(1.85rem, 3.6vw, 2.65rem);
+  font-size: clamp(1.85rem, 3.5vw, 2.6rem);
   line-height: 1.25;
   letter-spacing: -0.01em;
 }
@@ -169,7 +171,7 @@
 @utility card-craft {
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-soft);
   transition:
     transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),

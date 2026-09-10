@@ -78,10 +78,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: `${SALON_CONFIG.name} | Luxury Hair & Beauty Salon` },
+      { title: `${SALON_CONFIG.name} | Nails & Eyebrows Studio` },
       {
         name: "description",
-        content: `Discover professional sculptured cuts, contoured colour, balayage, blow-dries and occasion styling at ${SALON_CONFIG.name}.`,
+        content: `${SALON_CONFIG.subheadline} Specialising in Classic Manicures, BIAB Gel, Nail Art, Brow Shaping, and Brow Lamination.`,
       },
       { property: "og:site_name", content: SALON_CONFIG.name },
       { property: "og:locale", content: "en_IE" },
